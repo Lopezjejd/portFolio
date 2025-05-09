@@ -15,7 +15,7 @@ body {
    
     font-family: 'Poppins', sans-serif;
     color: #333; /* Default text color */
-    background-color: #f9f9f9; /* Light background */
+    background-color: var(--color-bg); /* Light background */
     --color-bg: #0d0d0d;           /* Negro profundo */
     --color-surface: #1a1a1a;      /* Gris oscuro */
     --color-primary: #00ff88;      /* Verde neón principal */
@@ -99,7 +99,7 @@ h1 span{
     width: 100%;
     max-width: 1200px;
     background-color: var(--color-bg);
-    height: 100dvh;
+    height: 90dvh;
     color: var(--color-text);
 }
 .home__profile{
@@ -177,8 +177,56 @@ h1 span{
     color: var(--color-text);
 }
 
+/*Skills section  -----------------------------------*/
+
+.skills{
+    width: 100%;
+}
+.skills__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+   color: var(--color-primary); 
+}
+.skills__main{
+    width: 100%;
+}
+.skills__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-surface);
+    padding: 15px;
+    width:20%;
+    color: var(--color-text);
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills__card::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+  animation: bordeAnimado 4s linear infinite;
+}
 
 
+.skills__card img{
+    width: 70%;
+}
 
 /*MEDIA SECTION -------------------------------------*/
 @media (max-width: 768px) {
@@ -240,3 +288,27 @@ h1 span{
     transform: translateX(0);
 }
 }
+/*animations*/
+@keyframes bordeAnimado {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(100%) translateY(0) rotate(90deg);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(180deg);
+  }
+
+  75% {
+    transform: translateX(0) translateY(100%) rotate(270deg);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(360deg);
+  }
+}
+
+
