@@ -195,37 +195,121 @@ h1 span{
 }
 .skills__main{
     width: 100%;
-}
-.skills__card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-surface);
-    padding: 15px;
-    width:20%;
-    color: var(--color-text);
-    text-align: center;
-    font-size: 1rem;
     position: relative;
+    padding: 10px 40px 10px 40px;
     overflow: hidden;
+    display: flex;
+   gap: 5px;
+   
 }
 
-.skills__card::after {
+/*estilo para los botones de desplazamiento*/
+.skills__btn-next,.skills__btn-prev{
+    position: absolute;
+    width: 40px;
+    z-index: 10;
+    top: 0;
+    height: 100%;
+    background-color:#000;
+    border: none;
+   transition: all 0.2s ease;
+    
+}
+
+.skills__btn-next img,.skills__btn-prev img{
+    width: 50%;
+    filter: drop-shadow(0 0 5px var(--color-primary));
+    transition: all 0.2s ease;
+}
+.skills__btn-next{
+    right: 0;
+}
+.skills__btn-prev{
+    left: 0;
+}
+.skills__btn-prev img{
+ transform: rotate(180deg);
+}
+.skills__btn-next:hover img,.skills__btn-prev:hover img {
+    filter: drop-shadow(0 0 6px var(--color-alternative));
+}
+ /*fin de estilo y posicionamiento de los botones*/   
+
+.skills__container-card {
+  padding: 5px;
+  width: 25%;
+  flex-shrink: 0;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; /* Añadido para una transición suave */
+}
+
+.skills__container-card::before,
+.skills__container-card::after {
   content: '';
   position: absolute;
-  height: 3px;
-  width: 100%;
-  background-color: var(--color-primary);
-  top: 0;
-  left: 0;
-  transform-origin: left top;
-  animation: bordeAnimado 4s linear infinite;
+  width: 150%;
+  height: 150%;
+  z-index: -1;
+  transition: background-color 0.3s ease, animation-duration 0.3s ease; /* Transición para color de fondo y duración */
 }
 
+.skills__container-card::before {
+  background-image: conic-gradient(
+    from 0deg,
+    var(--color-alternative) 0deg,
+    rgba(189, 58, 249, 0.6) 30deg,
+    transparent 90deg
+  );
+  animation-name: rotar;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
-.skills__card img{
-    width: 70%;
+.skills__container-card::after {
+  background-image: conic-gradient(
+    from 180deg,
+    var(--color-primary) 0deg,
+    transparent 90deg
+  );
+  animation-name: rotar;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.skills__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-surface);
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: var(--color-text);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.skills__card img {
+  width: 60%;
+}
+
+/* Cuando hover sobre el contenedor, se escala */
+.skills__container-card:hover {
+  transform: scale(1.05);
+}
+
+/* Cambiar color de fondo y ajustar la duración de la animación */
+.skills__container-card:hover::before,
+.skills__container-card:hover::after {
+  animation-duration: 1s; /* Cambio en la duración de la animación */
 }
 
 /*MEDIA SECTION -------------------------------------*/
@@ -289,26 +373,13 @@ h1 span{
 }
 }
 /*animations*/
-@keyframes bordeAnimado {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-
-  25% {
-    transform: translateX(100%) translateY(0) rotate(90deg);
-  }
-
-  50% {
-    transform: translateX(100%) translateY(100%) rotate(180deg);
-  }
-
-  75% {
-    transform: translateX(0) translateY(100%) rotate(270deg);
-  }
-
-  100% {
-    transform: translateX(0) translateY(0) rotate(360deg);
-  }
+@keyframes rotar {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
 }
 
 

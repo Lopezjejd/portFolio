@@ -1,0 +1,30 @@
+{
+    "skills": [
+        {
+            "img":"img/html-5.png",
+            "titulo": "HTML5",
+            "descripcion": "herramienta para manejar la estructura de la web."
+        },
+        {
+            "img": "img/css.png",
+            "titulo": "CSS3",
+            "descripcion": "Diseño de interfaces atractivas y experiencia de usuario intuitiva."
+        },
+        {
+            "img": "img/js.png",
+            "titulo": "Java Script",
+            "descripcion": "Desarrollo de aplicaciones utilizando lenguajes como JavaScript, Python y más."
+        },
+         {
+            "img":"img/typescript.png",
+            "titulo": "TypeScript",
+            "descripcion": "Superset de JavaScript que añade tipado estático y características avanzadas."
+        },
+        {
+            "img": "img/react.png",
+            "titulo": "React",
+            "descripcion": "Librería de JavaScript para construir interfaces de usuario interactivas."
+        }
+       
+    ]
+}
