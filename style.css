@@ -182,6 +182,7 @@ h1 span{
 .skills{
     width: 100%;
 }
+
 .skills__container{
     display: flex;
     flex-direction: column;
@@ -193,6 +194,16 @@ h1 span{
     padding: 20px;
    color: var(--color-primary); 
 }
+.skills__indicators{
+    width: 4px;
+    height: 4px;
+
+}
+.skills__indicators:hover,.activo{
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
 .skills__main{
     width: 100%;
     position: relative;
@@ -222,7 +233,7 @@ h1 span{
     transition: all 0.2s ease;
 }
 .skills__btn-next{
-    right: 0;
+    right: 0px;
 }
 .skills__btn-prev{
     left: 0;
@@ -236,8 +247,8 @@ h1 span{
  /*fin de estilo y posicionamiento de los botones*/   
 
 .skills__container-card {
-  padding: 5px;
-  width: 25%;
+  padding: 3px;
+  width: 24.5%;
   flex-shrink: 0;
   height: auto;
   position: relative;
@@ -298,7 +309,15 @@ h1 span{
 }
 
 .skills__card img {
-  width: 60%;
+  width: 50%;
+  object-fit: cover;
+  object-position: top;
+  
+}
+.skills__card--text{
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 /* Cuando hover sobre el contenedor, se escala */

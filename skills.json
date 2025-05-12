@@ -13,12 +13,12 @@
         {
             "img": "img/js.png",
             "titulo": "Java Script",
-            "descripcion": "Desarrollo de aplicaciones utilizando lenguajes como JavaScript, Python y más."
+            "descripcion": "lenguaje para manipular el DOM y trabajar principalmente con la web."
         },
          {
             "img":"img/typescript.png",
             "titulo": "TypeScript",
-            "descripcion": "Superset de JavaScript que añade tipado estático y características avanzadas."
+            "descripcion": "Superset de JavaScript añade tipado estático y características avanzadas."
         },
         {
             "img": "img/react.png",
