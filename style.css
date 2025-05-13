@@ -181,8 +181,12 @@ h1 span{
 
 .skills{
     width: 100%;
+    position: relative;
 }
-
+.skills__title{
+    text-align: center;
+    color: var(--color-primary);
+}
 .skills__container{
     display: flex;
     flex-direction: column;
@@ -194,12 +198,25 @@ h1 span{
     padding: 20px;
    color: var(--color-primary); 
 }
-.skills__indicators{
-    width: 4px;
-    height: 4px;
-
+.skills__container-slider{
+position: relative;
 }
-.skills__indicators:hover,.activo{
+.skills__indicators{
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: right;
+}
+.skills__indicators button{
+    width: 20px;
+    height: 10px;
+    background-color: var(--color-muted);
+    border: none;
+    margin: 0 5px;
+    transition: all 0.2s ease;
+}
+.skills__indicators button:hover,.activo{
     background-color: var(--color-primary);
     cursor: pointer;
 }

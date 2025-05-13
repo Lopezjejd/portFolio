@@ -137,8 +137,11 @@ if (!indicadores) {
     for (let i = 0; i < paginas; i++) {
       const btn = document.createElement('button');
       btn.dataset.index = i;
+      
       btn.addEventListener('click', () => moverASeccion(i));
       indicadores.appendChild(btn);
+        
+      
     }
   };
 
