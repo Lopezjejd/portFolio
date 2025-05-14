@@ -208,10 +208,9 @@ position: relative;
     display: flex;
     justify-content: right;
 }
-.skills__indicators button{
+.skills__indicators button{ /*no olvidar espesifidad*/
     width: 20px;
     height: 10px;
-    background-color: var(--color-muted);
     border: none;
     margin: 0 5px;
     transition: all 0.2s ease;
@@ -238,14 +237,15 @@ position: relative;
     z-index: 10;
     top: 0;
     height: 100%;
-    background-color:#000;
+    background-color:#383535;
     border: none;
    transition: all 0.2s ease;
+   border-radius: 10px;
     
 }
 
 .skills__btn-next img,.skills__btn-prev img{
-    width: 50%;
+    width: 70%;
     filter: drop-shadow(0 0 5px var(--color-primary));
     transition: all 0.2s ease;
 }
@@ -384,6 +384,8 @@ position: relative;
         font-size: 1.1rem;
         padding: 10px 0;
     }
+
+
 }
 /*menu*/
 @media (max-width: 768px){
@@ -407,6 +409,23 @@ position: relative;
  .nav-animation{
     transform: translateX(0);
 }
+}
+/*SLIDER ---*/
+@media (max-width: 800px){
+    .skills__main{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    .skills__container-card{
+        width: 45%;
+    }
+    .skills__indicators{
+        display: none;
+    }
+    .skills__btn-next,.skills__btn-prev{
+        display: none;
+    }
+   
 }
 /*animations*/
 @keyframes rotar {
