@@ -202,6 +202,7 @@ h1 span{
 position: relative;
 }
 .skills__indicators{
+    margin: auto;
     width: 100%;
     max-width: 1200px;
     padding-right: 30px;
@@ -275,7 +276,31 @@ position: relative;
   align-items: center;
   transition: all 0.3s ease; /* Añadido para una transición suave */
 }
+/* Cuando hover sobre el contenedor, se escala */
+.skills__container-card:hover {
+  transform: scale(1.05);
+}
+/*clases para skills proximas*/
+.skills__coming-soon{
+   background-color: var(--color-bg);
 
+}
+.skills__coming-soon-overlay{
+    opacity: 0.5;
+}
+.skills__coming-soon-text{
+    position: absolute;
+    background-color: var(--color-alternative);
+    padding: 15px;
+    color: var(--color-text);
+    font-weight: 700;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+    transform: rotate(-15deg);
+}
+
+/*FIN*/
 .skills__container-card::before,
 .skills__container-card::after {
   content: '';
@@ -337,10 +362,7 @@ position: relative;
     margin-top: 10px;
 }
 
-/* Cuando hover sobre el contenedor, se escala */
-.skills__container-card:hover {
-  transform: scale(1.05);
-}
+
 
 /* Cambiar color de fondo y ajustar la duración de la animación */
 .skills__container-card:hover::before,

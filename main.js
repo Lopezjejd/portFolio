@@ -8,6 +8,7 @@ const flechaIzquierda = '.skills__btn-prev';
 const flechaDerecha = '.skills__btn-next';
 const indicadoresSelector = '.skills__indicators';
 
+
 // Crear media query
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
@@ -45,6 +46,15 @@ async function crearSkills(){
                     <p class="skills__card--text">${skill.descripcion}</p>
                 </div>
       `;
+      if(!skill.active){
+        div.classList.add('skills__coming-soon');
+        div.style.pointerEvents = 'none';
+        div.firstElementChild.classList.add(`skills__coming-soon-overlay`);
+        let soon = document.createElement('div');
+        soon.classList.add('skills__coming-soon-text');
+        soon.textContent = `PRONTO`;
+        div.appendChild(soon);
+      }
       skillsContainer.appendChild(div);
     });
       crearSlider({

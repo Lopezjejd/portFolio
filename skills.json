@@ -3,27 +3,32 @@
         {
             "img":"img/html-5.png",
             "titulo": "HTML5",
-            "descripcion": "herramienta para manejar la estructura de la web."
+            "descripcion": "herramienta para manejar la estructura de la web.",
+            "active": true
         },
         {
             "img": "img/css.png",
             "titulo": "CSS3",
-            "descripcion": "Diseño de interfaces atractivas y experiencia de usuario intuitiva."
+            "descripcion": "Diseño de interfaces atractivas y experiencia de usuario intuitiva.",
+            "active": true
         },
         {
             "img": "img/js.png",
             "titulo": "Java Script",
-            "descripcion": "lenguaje para manipular el DOM y trabajar principalmente con la web."
+            "descripcion": "lenguaje para manipular el DOM y trabajar principalmente con la web.",
+            "active": true
         },
          {
             "img":"img/typescript.png",
             "titulo": "TypeScript",
-            "descripcion": "Superset de JavaScript añade tipado estático y características avanzadas."
+            "descripcion": "Superset de JavaScript añade tipado estático y características avanzadas.",
+            "active": false
         },
         {
             "img": "img/react.png",
             "titulo": "React",
-            "descripcion": "Librería de JavaScript para construir interfaces de usuario interactivas."
+            "descripcion": "Librería de JavaScript para construir interfaces de usuario interactivas.",
+            "active": false
         }
        
     ]
