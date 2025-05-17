@@ -18,15 +18,15 @@
 
          </div>
         <ul class="nav__ul">
-            <li class="nav__item"><a href="" class="nav__link">Home</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Skills</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Projects</a></li>
-            <li class="nav__item"><a href="" class="nav__link">Sobre mi</a></li>
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">Sobre mi</a></li>
         </ul>
     </nav>
 </header>
-<main class="">
-    <section class="home">
+<main class="main">
+    <section id="home" class="home">
         <div class="home__container">
             <div class="home__profile">
                 <img src="img/yo.jpeg" alt="LopezDev" class="home__img">
@@ -36,13 +36,13 @@
             <div class="home__description">
                 <p class="home__description--text">Soy lopez, desarrollador <span>FrontEnd</span>, me apasiona hacer <span>proyectos</span> cada vez mejores y dinamicos, aprender de los demas y <span>mejorar 1% </span>cada dia</p>
                 <div class="home__description-links">
-                    <div class="link-box"><a href="skills">Tecnologias</a></div>
-                    <div class="link-box"><a href="projects">proyectos</a></div>
-                    <div class="link-box"><a href="skills">Sobre mi</a></div>
+                    <div class="link-box"><a href="#skills">Tecnologias</a></div>
+                    <div class="link-box"><a href="#projects">proyectos</a></div>
+                    <div class="link-box"><a href="#about">Sobre mi</a></div>
                 </div>
             </div>
     </section>
-    <section class="skills">
+    <section id="skills" class="skills">
         <h2 class="skills__title">Tecnologias</h2>
         <div class="skills__indicators"></div>
         <div class="skills__container">
@@ -54,8 +54,22 @@
             </div>
         </div>
     </section>
-</main>
+    <section id="projects" class="projects">
+        <h2 class="projects__title">Proyectos</h2>
+        <div class="projects__container">
 
+        </div>
+    </section>
+</main>
+<!-- Modal global -->
+<div id="projectModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <div class="modal-body">
+      <!-- Aquí inyectaremos la info del proyecto -->
+    </div>
+  </div>
+</div>
     <script src="main.js"></script>
 </body>
 </html>

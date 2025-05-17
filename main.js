@@ -8,6 +8,9 @@ const flechaIzquierda = '.skills__btn-prev';
 const flechaDerecha = '.skills__btn-next';
 const indicadoresSelector = '.skills__indicators';
 
+const modal      = document.getElementById('projectModal');
+const modalBody  = modal.querySelector('.modal-body');
+const modalClose = modal.querySelector('.modal-close');
 
 // Crear media query
 const mediaQuery = window.matchMedia('(max-width: 768px)');
@@ -34,7 +37,40 @@ async function crearSkills(){
     const data = await response.json();
    const skillsContainer = document.querySelector('.skills__main');
       document.querySelectorAll('.skills__container-card').forEach(card => card.remove());
-
+  // agregamos tambien la parte de proyectos
+    const projectsContainer = document.querySelector('.projects__container');
+    projectsContainer.innerHTML = '';
+      
+    const projects = data.projects; 
+    projects.forEach(project => {
+      //creacion de la targeta
+      const div = document.createElement('div');
+      div.classList.add(`projects__card`);
+      const img = document.createElement('img');
+      img.classList.add('projects__card--img');
+      img.src = project.img;
+      img.alt = project.titulo;
+      const titulo = document.createElement('h3');
+      titulo.classList.add('projects__card--title');
+      titulo.textContent = project.titulo;
+      const descripcion = document.createElement('p');
+      descripcion.classList.add('projects__card--text');
+      descripcion.textContent = project.descripcion;
+      const link = document.createElement('a');
+      link.classList.add('projects__card--link');
+      link.href = project.link;
+      link.target = '_blank';
+      const linkLogo = document.createElement('img');
+      linkLogo.src = project.linkLogo;
+      //agregamos todos los elementos al div
+      link.appendChild(linkLogo);
+      div.appendChild(img);
+      div.appendChild(titulo);
+      div.appendChild(descripcion);
+      div.appendChild(link);
+      //y lo agregamos al DOM
+      projectsContainer.appendChild(div);
+    });
     const skills = data.skills;
     skills.forEach(skill => {
       const div = document.createElement('div');

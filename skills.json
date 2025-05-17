@@ -31,5 +31,15 @@
             "active": false
         }
        
+    ],
+    "projects": [
+        {
+            "img":"img-p/r4.png",
+            "titulo": "Pagina resident evil",
+            "descripcion": "Una imitacion a la pagina del juego de resident evil 4, es una pagina estatica, pero con detalles pulidos y buena estetica",
+            "link": "https://github.com/Lopezjejd/r4",
+            "linkLogo":"img-p/github.png"
+            
+        }
     ]
 }

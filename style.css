@@ -186,6 +186,7 @@ h1 span{
 .skills__title{
     text-align: center;
     color: var(--color-primary);
+    font-size: 2rem;
 }
 .skills__container{
     display: flex;
@@ -280,6 +281,7 @@ position: relative;
 .skills__container-card:hover {
   transform: scale(1.05);
 }
+
 /*clases para skills proximas*/
 .skills__coming-soon{
    background-color: var(--color-bg);
@@ -298,8 +300,14 @@ position: relative;
     top: 10px;
     left: 10px;
     transform: rotate(-15deg);
+    transition: all 0.2s ease;
+    z-index: 1;
 }
-
+.skills__coming-soon-text:hover{
+transform: rotate(0deg);
+    background-color: var(--color-primary);
+    
+}
 /*FIN*/
 .skills__container-card::before,
 .skills__container-card::after {
@@ -369,6 +377,109 @@ position: relative;
 .skills__container-card:hover::after {
   animation-duration: 1s; /* Cambio en la duración de la animación */
 }
+
+/*-------------PORJECTS section -----*/
+
+.projects{
+    margin-top: 50px;
+    width: 100%;
+}
+.projects__title{
+    text-align: center;
+    color: var(--color-alternative);
+    font-size: 2rem;
+}
+.projects__container{
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     overflow: hidden;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+   padding: 10px;
+}
+.projects__card{
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    color: var(--color-text);
+    background: #000;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+.projects__card--img{
+  transition: all 0.3s ease;
+}
+
+.projects__card:hover .projects__card--img{
+  transform: scale(1.05);
+}
+
+.projects__card--title{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+.projects__card--text{
+    font-size: 1.1rem;
+    padding: 10px;
+}
+.projects__card--link{
+    margin-top:15px ;
+    width: 40px;
+}
+.projects__card--link img{
+    max-width: 100%;
+    filter: drop-shadow(0 0 1px var(--color-text));
+    transition: all 0.2s ease;
+}
+.projects__card--link:hover img{
+    filter: drop-shadow(0 0 5px var(--color-primary));
+}
+/*VENTANA MODAL*/
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.modal-body img {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
 
 /*MEDIA SECTION -------------------------------------*/
 @media (max-width: 768px) {
