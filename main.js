@@ -9,9 +9,10 @@ const flechaDerecha = '.skills__btn-next';
 const indicadoresSelector = '.skills__indicators';
 
 const modal      = document.getElementById('projectModal');
-const modalBody  = modal.querySelector('.modal-body');
-const modalClose = modal.querySelector('.modal-close');
-
+const modalContent = modal.querySelector('.modal-content');
+const modalClose = document.createElement('span');
+modalClose.classList.add('modal-close');
+modalClose.innerHTML = '&times;';
 // Crear media query
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
@@ -42,24 +43,30 @@ async function crearSkills(){
     projectsContainer.innerHTML = '';
       
     const projects = data.projects; 
+
     projects.forEach(project => {
       //creacion de la targeta
       const div = document.createElement('div');
       div.classList.add(`projects__card`);
+
       const img = document.createElement('img');
       img.classList.add('projects__card--img');
       img.src = project.img;
       img.alt = project.titulo;
+
       const titulo = document.createElement('h3');
       titulo.classList.add('projects__card--title');
       titulo.textContent = project.titulo;
+
       const descripcion = document.createElement('p');
       descripcion.classList.add('projects__card--text');
       descripcion.textContent = project.descripcion;
+
       const link = document.createElement('a');
       link.classList.add('projects__card--link');
       link.href = project.link;
       link.target = '_blank';
+
       const linkLogo = document.createElement('img');
       linkLogo.src = project.linkLogo;
       //agregamos todos los elementos al div
@@ -70,7 +77,34 @@ async function crearSkills(){
       div.appendChild(link);
       //y lo agregamos al DOM
       projectsContainer.appendChild(div);
+
+      //agregamos el evento de click para abrir el modal
+      div.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modalContent.innerHTML = `
+        <span class="modal-close">&times;</span>
+        <img src=${project.img} alt=${project.titulo}>
+        <h3>${project.titulo}</h3>
+        <p>${project.descripcion}</p>
+        <a href=${project.link} target="_blank">
+          <img src=${project.linkLogo} alt="link">
+        </a>
+        `;
+        modalContent.appendChild(modalClose);
+        
+        //evento para cerrar el modal
+       modalClose.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modalContent.innerHTML = '';
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) { //cierra si se hace click solo en el fondo osea en el p
+          modal.classList.add('hidden');
+          modalContent.innerHTML = '';
+        }
+      });
     });
+  });
     const skills = data.skills;
     skills.forEach(skill => {
       const div = document.createElement('div');
